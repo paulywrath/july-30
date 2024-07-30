@@ -4,9 +4,11 @@ function App() {
 
   const [daves, setDaves] = useState([]);
 
+  const basePath = process.env.NODE_ENV === `production` ? `https://july-30.onrender.com/` : `http://localhost:3000/`
+
   useEffect(()=>{
     const getDaves = async() => {
-      const response = await fetch (`http://localhost:3000/api/v1/daves`);
+      const response = await fetch (`${basePath}api/v1/daves`);
       const result = await response.json();
       setDaves(result);
     }
