@@ -13,4 +13,6 @@ app.get('/api/v1/daves', (req, res, next) => {
   res.send(davesIKnow);
 })
 
-app.listen(3000, () => {console.log(`server on`)})
+const port = process.env.PORT || 3000
+
+app.listen(port, () => {console.log(`server on`)})
